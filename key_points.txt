@@ -1,0 +1,23 @@
+
+this version supports = C:\Python\Python34
+
+Move to the respectve folder
+>cd C:\ML\Chat-with-PDF-Chatbot
+
+create AN ENV
+> C:\Python\Python34\python -m venv ./env
+
+activate env
+> .\venv\Scripts\activate.bat
+
+install requirements
+> pip install -r .\requirements.txt
+
+deactivate env
+> deactivate
+
+step 1: ingest
+> python ingest.py
+
+step 2: run the app
+> chainlit run model.py -w
