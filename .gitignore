@@ -2,3 +2,4 @@
 .chainlit
 __pycache__
 venv
+*.bin
