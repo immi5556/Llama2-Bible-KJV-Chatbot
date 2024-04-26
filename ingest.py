@@ -6,6 +6,9 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 #DATA_PATH = 'data/'
 DATA_PATH = 'kjv/'
 DB_FAISS_PATH = 'vectorstore/db_faiss'
+#not working with tamil
+#DATA_PATH = 'tamil-bible-ov/'
+#DB_FAISS_PATH = 'vectorstore/tamil-bible-ov/db_faiss'
 
 # Create vector database
 def create_vector_db():

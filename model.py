@@ -7,6 +7,7 @@ from langchain.chains import RetrievalQA
 import chainlit as cl
 
 DB_FAISS_PATH = 'vectorstore/db_faiss'
+#DB_FAISS_PATH = 'vectorstore/tamil-bible-ov/db_faiss'
 
 custom_prompt_template = """Use the following pieces of information to answer the user's question.
 If you don't know the answer, just say that you don't know, don't try to make up an answer.

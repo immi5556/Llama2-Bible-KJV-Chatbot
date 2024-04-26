@@ -1,11 +1,11 @@
-
-this version supports = C:\Python\Python34
+﻿
+this version setup is made with  3.12 = C:\Python312
 
 Move to the respectve folder
->cd C:\ML\Chat-with-PDF-Chatbot
+>cd C:\Users\IMMI\source\repos\immi5556\Llama2-Bible-KJV-Chatbot
 
 create AN ENV
-> C:\Python\Python34\python -m venv ./env
+> C:\Python312\python -m venv ./venv
 
 activate env
 > .\venv\Scripts\activate.bat
@@ -21,3 +21,5 @@ step 1: ingest
 
 step 2: run the app
 > chainlit run model.py -w
+
+தேவன் மனிதர்களை எப்போழுது உண்டாக்கினார் ?
