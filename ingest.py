@@ -4,11 +4,11 @@ from langchain_community.document_loaders import PyPDFLoader, DirectoryLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter 
 
 #DATA_PATH = 'data/'
-DATA_PATH = 'kjv/'
-DB_FAISS_PATH = 'vectorstore/db_faiss'
-#not working with tamil
-#DATA_PATH = 'tamil-bible-ov/'
-#DB_FAISS_PATH = 'vectorstore/tamil-bible-ov/db_faiss'
+#DATA_PATH = 'kjv/'
+#DB_FAISS_PATH = 'vectorstore/db_faiss'
+#not working with tamil with defaul llama 2, now trying with new tamil trained -- lama model in new branch
+DATA_PATH = 'tamil-bible-ov/'
+DB_FAISS_PATH = 'vectorstore/tamil-bible-ov-new/db_faiss'
 
 # Create vector database
 def create_vector_db():

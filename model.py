@@ -6,19 +6,28 @@ from langchain_community.llms import CTransformers
 from langchain.chains import RetrievalQA
 import chainlit as cl
 
-DB_FAISS_PATH = 'vectorstore/db_faiss'
+#DB_FAISS_PATH = 'vectorstore/db_faiss'
 #DB_FAISS_PATH = 'vectorstore/tamil-bible-ov/db_faiss'
+DB_FAISS_PATH = 'vectorstore/tamil-bible-ov-new/db_faiss'
 
+#custom_prompt_template = """Use the following pieces of information to answer the user's question.
+#If you don't know the answer, just say that you don't know, don't try to make up an answer.
+#
+#Context: {context}
+#Question: {question}
+#
+#Only return the helpful answer below and nothing else.
+#Helpful answer:
+#"""
 custom_prompt_template = """Use the following pieces of information to answer the user's question.
-If you don't know the answer, just say that you don't know, don't try to make up an answer.
+### Instruction:
+{question}
 
-Context: {context}
-Question: {question}
+### Input:
+{context}
 
-Only return the helpful answer below and nothing else.
-Helpful answer:
+### Response:
 """
-
 def set_custom_prompt():
     """
     Prompt template for QA retrieval for each vectorstore
@@ -42,7 +51,8 @@ def load_llm():
     # Load the locally downloaded model here
     llm = CTransformers(
         #model = "TheBloke/Llama-2-7B-Chat-GGML",
-        model = "llama-2-7b-chat.ggmlv3.q8_0.bin",
+        #model = "llama-2-7b-chat.ggmlv3.q8_0.bin",
+        model = "tamil-llama-7b-v0.1-q5_k_m.gguf",
         model_type="llama",
         max_new_tokens = 512,
         temperature = 0.5
@@ -72,7 +82,7 @@ async def start():
     chain = qa_bot()
     msg = cl.Message(content="Starting the bot...")
     await msg.send()
-    msg.content = "Hi, Welcome to Bible (KJV). What is your query?"
+    msg.content = "Hi, Welcome to Tamil Bible (OV). What is your query?"
     await msg.update()
 
     cl.user_session.set("chain", chain)
